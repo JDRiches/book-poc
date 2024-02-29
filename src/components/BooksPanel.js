@@ -25,7 +25,7 @@ function BooksPanel({searchQuery}) {
     <div className='m-24 rounded-md grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-12 place-items-center'>
       {books.map((book) => {
         const imageLink = "imageLinks" in book.volumeInfo ? book.volumeInfo.imageLinks.thumbnail : "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
-        return <BookCard title={book.volumeInfo.title} image={imageLink}/>
+        return <BookCard title={book.volumeInfo.title} image={imageLink} author={book.volumeInfo.authors[0]}/>
       })}
     </div>
   )
